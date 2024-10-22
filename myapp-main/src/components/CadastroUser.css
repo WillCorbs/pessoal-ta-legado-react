@@ -1,0 +1,27 @@
+#formulario {
+    background-color: violet;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+h2{
+    text-align: center;
+}
+
+input[type=text], select {
+    width: 100%;
+    border-radius: 15px;
+}
+input[type=email], select {
+    width: 100%;
+    border-radius: 15px;
+}
+input[type=password], select {
+    width: 100%;
+    border-radius: 15px;
+}
+input[type=button], select {
+    width: 100%;
+    border-radius: 15px;
+    margin: 3px;
+}
