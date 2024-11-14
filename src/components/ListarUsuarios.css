@@ -1,0 +1,41 @@
+#lista-usuarios {
+    color: white;
+}
+
+#lista-usuarios h1 {
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+button, input[type=submit] {
+    cursor: pointer;
+}
+
+
+#formulario-update {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+#formulario-update form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 60%;
+    height: fit-content;
+    color: white;
+}
