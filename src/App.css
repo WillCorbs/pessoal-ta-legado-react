@@ -1,8 +1,44 @@
-  body {
-    background-color: gray;
-    }
-    
-    #title{
-      background-color: gray;
-      text-align: center;
-    }
+/*Estilos Gerais*/
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #aaa;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+/*Navegação*/
+#navegacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button.btn-navegacao {
+  margin-bottom: 30px;
+  width: 30%;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  background-color: #eee;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
+}
+
+button.btn-navegacao:hover {
+  border: 3px solid #555;
+}
+
+button.btn-navegacao:active {
+  background-color: #bbb;
+}

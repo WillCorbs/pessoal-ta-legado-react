@@ -1,27 +1,138 @@
-#formulario {
-    background-color: violet;
-    max-width: 360px;
-    margin: 0 auto;
+/*Estilos gerais*/
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
-h2{
+body {
+    background-color: #aaa;
+}
+
+h1 {
     text-align: center;
 }
 
-input[type=text], select {
-    width: 100%;
-    border-radius: 15px;
+
+/*Formulário*/
+#formulario {
+    max-width: 40%;
+    margin: 0 auto;
 }
-input[type=email], select {
-    width: 100%;
-    border-radius: 15px;
+
+label {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
 }
-input[type=password], select {
+
+input {
     width: 100%;
-    border-radius: 15px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
 }
-input[type=button], select {
-    width: 100%;
-    border-radius: 15px;
-    margin: 3px;
+
+input:focus {
+    border: 3px solid #555;
+}
+
+input::placeholder {
+    font-weight: bold;
+}
+
+hr {
+    border: 1px solid white;
+    border-radius: 1px;
+}
+
+button.btn-cadastro {
+    text-align: center;
+    position: relative;
+    width: 150px;
+    left: calc(50% - 75px);
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: #eee;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    -webkit-transition: border 0.2s;
+    transition: border 0.2s;
+}
+
+button.btn-cadastro:hover {
+    border: 3px solid #555;
+}
+
+button.btn-cadastro:active {
+    background-color: #bbb;
+}
+
+
+/*Mostrados de Senha*/
+#mostrar-senha {
+    width: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    -ms-transform: scale(1.5); /*IE*/
+    -moz-transform: scale(1.5); /*FF*/
+    -webkit-transform: scale(1.5); /*Safari e Chrome*/
+    -o-transform: scale(1.5); /*Opera*/
+    transform: scale(1.5);
+}
+
+#mostrar-senha~label {
+    font-weight: normal;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+
+/*Detector de CapsLock*/
+#detecta-capslock {
+    color: rgb(214, 54, 54);
+}
+
+
+/*Verificador de CEP*/
+#valido {
+    color: rgb(20, 136, 20);
+    font-weight: bold;
+}
+
+
+/*Barra de Navegação*/
+#barra-navegacao {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    padding: 15px;
+    border-bottom: 3px solid #ddd;
+}
+
+button.btn-navegacao {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: #eee;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    -webkit-transition: border 0.2s;
+    transition: border 0.2s;
+}
+
+button.btn-navegacao:hover {
+    border: 3px solid #555;
+}
+
+button.btn-navegacao:active {
+    background-color: #bbb;
 }

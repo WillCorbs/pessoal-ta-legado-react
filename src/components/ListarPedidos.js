@@ -1,28 +1,26 @@
-import './ListarUsuarios.css';
-import {useState, useEffect} from 'react';
+import './ListarPedidos.css';
 import {useNavigate} from 'react-router-dom';
+import {useState, useEffect} from 'react';
 
 
-function ListarUsuarios() {
-    // Update de usuários
+function ListarPedidos() {
+    // Navegação
     const navigate = useNavigate();
-    const updateUsuario = (id) => {
-        navigate(`/update-usuario/${id}`);
-    }
 
     const handleNavegarParaPaginas = (caminho) => {
         navigate(`/${caminho}`);
     }
 
 
-    // Puxando a lista de usuários
+    // Puxando a lista de pedidos
     const [dados, setDados] = useState([]);
 
     async function puxarLista() {
-        const api = await fetch('http://localhost:8000/api/users');
+        const api = await fetch('http://localhost:8000/api/pedidos');
 
         if(api.ok) {
             let response = await api.json();
+
             console.log(response);
             setDados(response);
         } else {
@@ -36,7 +34,7 @@ function ListarUsuarios() {
 
 
     // HTML da página
-    return (
+    return(
         <div id='container-geral'>
 
             <div id='barra-navegacao'>
@@ -56,22 +54,30 @@ function ListarUsuarios() {
 
             </div>
 
-            <div id="lista-usuarios">
+            <div id='lista-pedidos'>
 
-                <h1>Lista de Usuários</h1>
+                <h1>Lista de Pedidos</h1>
 
-                <table id='tb-usuarios'>
+                <table id='tb-pedidos'>
 
                     <thead>
 
                         <tr>
 
+                            <th rowSpan='2'>Número</th>
+                            <th colSpan='2'>Usuário</th>
+                            <th colSpan='2'>Produto</th>
+                            <th rowSpan='2'>Quantidade</th>
+                            <th rowSpan='2'>Total</th>
+
+                        </tr>
+
+                        <tr>
+
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>Email</th>
-                            <th>CPF / CNPJ</th>
-                            <th>CEP</th>
-                            <th>Atualizar</th>
+                            <th>ID</th>
+                            <th>Nome</th>
 
                         </tr>
 
@@ -79,18 +85,16 @@ function ListarUsuarios() {
 
                     <tbody>
 
-                        {dados.map((usuario) => (
-                            <tr key={usuario.id}>
+                        {dados.map((pedido) => (
+                            <tr key={pedido.id}>
 
-                                <td>{usuario.id}</td>
-                                <td>{usuario.name}</td>
-                                <td>{usuario.email}</td>
-                                <td>{usuario.cpf_cnpj}</td>
-                                <td>{usuario.cep}</td>
-                                <td>
-                                    <button className='btn-atualizar' type='button'
-                                        onClick={() => updateUsuario(usuario.id)}>Atualizar</button>
-                                </td>
+                                <td>{pedido.id}</td>
+                                <td>{pedido.user.id}</td>
+                                <td>{pedido.user.name}</td>
+                                <td>{pedido.produto.id}</td>
+                                <td>{pedido.produto.nome}</td>
+                                <td>{pedido.qtde}</td>
+                                <td>R$ {pedido.preco.toFixed(2)}</td>
 
                             </tr>
                         ))}
@@ -106,4 +110,4 @@ function ListarUsuarios() {
 }
 
 
-export default ListarUsuarios;
+export default ListarPedidos;

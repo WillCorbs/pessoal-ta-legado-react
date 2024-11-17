@@ -62,7 +62,6 @@ button.btn-cadastro {
     border-radius: 10px;
     -webkit-transition: border 0.2s;
     transition: border 0.2s;
-    cursor: pointer;
 }
 
 button.btn-cadastro:hover {
@@ -95,36 +94,4 @@ button.btn-cadastro:active {
 
 #btn-voltar:active {
     background-color: #bbb;
-}
-
-
-/*Mostrados de Senha*/
-#mostrar-senha {
-    width: 30px;
-    font-size: 1.2em;
-    cursor: pointer;
-    -ms-transform: scale(1.5); /*IE*/
-    -moz-transform: scale(1.5); /*FF*/
-    -webkit-transform: scale(1.5); /*Safari e Chrome*/
-    -o-transform: scale(1.5); /*Opera*/
-    transform: scale(1.5);
-}
-
-#mostrar-senha~label {
-    font-weight: normal;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-
-/*Detector de CapsLock*/
-#detecta-capslock {
-    color: rgb(214, 54, 54);
-}
-
-
-/*Verificador de CEP*/
-#valido {
-    color: rgb(20, 136, 20);
-    font-weight: bold;
 }
